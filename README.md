@@ -31,14 +31,10 @@
   <p align="center">
     AI soccer shot analysis platform to improve kicking form
     <br />
-    <a href="https://www.youtube.com/watch?v=WyINpCzZDsw" target="_blank"><strong>View Demo »</strong></a>
+    <a href="https://youtu.be/qXhOQmBVPfo" target="_blank"><strong>View Demo »</strong></a>
     <br />
     <br />
-    <a href="https://www.shakespeareai.ca">Visit Website</a>
-    ·
-    <a href="https://github.com/gordonzhang1/ShakespeareAI/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/gordonzhang1/ShakespeareAI/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+
   </p>
 </div>
 
@@ -52,35 +48,37 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-  <a href="https://github.com/gordonzhang1/ShakespeareAI">
-    <img src="https://www.gordonzhang.ca/assets/WhaleBeing-CMRDC8OQ.png" alt="Logo" width="1000" height="auto">
+  <a href="https://github.com/jogong2718/SoccerMetrics">
+    <img src="https://www.gordonzhang.ca/assets/soccer-D0wiagJS.png" alt="Logo" width="1000" height="auto">
   </a>
-  <p>  SoccerMetrics is a 
+  <p>  SoccerMetrics lets you upload a video of you kicking a soccer ball, analyzes the video, and gives you a score and feedback on your kick based on the optimal form
 </p>
 
 
 ## What it does, and how we built it
 </h3>
-<p>WhaleBeing uses a dynamic prediction model to display how ship routes interact with blue whale habitats using a web app.
+<p>The platform provides players and coaches with actionable insights by analyzing biomechanics and comparing them to optimal standards. It identifies critical moments in gameplay—such as ball contact or specific movements—and evaluates joint angles, body posture, and overall technique. These measurements are compared to predefined optimal angles for peak performance. A custom scoring algorithm calculates a performance score for each movement, offering a clear metric for improvement and progress tracking.
 
-The core of our maching learning model is based off a 2019 research paper published in _ Diversity and Distributions (https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.12940) _, and predicts daily, year-round habitat suitability for blue whales off the coast of California. We implemented a method using a Boosted Regression Tree and candidate Generalized Additive Mixed Models to use satellite data of tracked blue whales to produce a whale distribution prediction.
+The platform uses MediaPipe GHUM 3D to extract precise 3D pose landmarks, allowing us to calculate joint angles and other biomechanical metrics. For each movement, joint angles are compared against a database of optimal angles derived from professional player data and biomechanical studies. Deviations from these optimal angles are quantified and factored into a custom scoring algorithm, which evaluates performance based on accuracy, consistency, and technique.
 
-WhaleBeing enables users to search and visualize ship routes overlaid on our dynamic prediction heatmaps using the SeaRoutes API. Once a ship route is found, WhaleBeing calculates the likelihood of that route intersecting with areas of high blue whale activity by integrating the distribution weights along the nodes of the ship route.
+Critical gameplay moments, such as ball contact, are identified using Pandas, and visualizations of angles and trajectories are annotated in real-time with OpenCV. Personalized feedback, based on the performance score, is generated using LangChain and the OpenAI API, ensuring that players receive detailed recommendations tailored to their unique needs.
 
-This calculation is pivotal in assessing the risk of ship strikes and supports proactive decision-making to mitigate such risks, ultimately aiding in the protection of this endangered species.</p>
+The scoring and feedback system operates seamlessly within a robust infrastructure powered by Docker for containerization, Kubernetes for scalability, and Google Cloud Platform for hosting. This architecture ensures the platform is both reliable and adaptable to various training scenarios. </p>
 
 
 
 ### Built With
 
 * [![React][React.js]][React-url]
+* [![TypeScript][TypeScript]][TypeScript-url]
 * [![Python][Python]][Python-url]
 * [![Flask][Flask]][Flask-url]
-* [![NumPy][NumPy]][NumPy-url]
 * [![Pandas][Pandas]][Pandas-url]
-* [![TypeScript][TypeScript]][TypeScript-url]
 * [![OpenCV][OpenCV]][OpenCV-url]
 * [![MediaPipe][MediaPipe]][MediaPipe-url]
+* [![OpenAI API][OpenAI]][OpenAI-url]
+* [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+
 
 
 
@@ -88,16 +86,21 @@ This calculation is pivotal in assessing the risk of ship strikes and supports p
 
 ### Deployed With
 * [![Google Cloud][GoogleCloud]][GoogleCloud-url]
+* [![Docker][Docker]][Docker-url]
+* [![Kubernetes][Kubernetes]][Kubernetes-url]
 * [![Vercel][Vercel]][Vercel-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 <ul>
-  <li><strong>AI-Powered Whale Distribution Prediction:</strong> Built a machine learning model in Python with NumPy and Pandas to predict whale distribution patterns using open-source satellite data, providing whale presence forecasts for any day of the year.</li>
-  <li><strong>Real-Time Whale Heatmap:</strong> Integrated the machine learning model with the Mapbox API to deliver an interactive, real-time predictive whale heatmap, enhancing maritime navigation and minimizing the risk of ship strikes.</li>
-  <li><strong>Ship Strike Risk Analysis:</strong> Developed a Python-based risk-analysis algorithm in Flask to assess the probability of ship strikes with whales.</li>
-  <li><strong>Seamless Integration with Ship Route Search:</strong> Incorporated the Searoutes API to enable dynamic ship route searches, calculating risk percentages based on predicted whale presence.</li>
+  <li><strong>Real-Time Ball Detection:</strong> Utilizes Ultralytics YOLOv8 for precise and efficient ball tracking during gameplay.</li>
+  <li><strong>3D Pose Landmark Extraction:</strong> Employs MediaPipe GHUM 3D to analyze player movements and extract biomechanical data.</li>
+  <li><strong>Biomechanical Metrics and Angle Calculations:</strong> Measures joint angles, body posture, and movement patterns to assess technical performance.</li>
+  <li><strong>Optimal Angle Comparison:</strong> Benchmarks player movements against predefined optimal angles derived from professional standards.</li>
+  <li><strong>Custom Scoring Algorithm:</strong> Calculates a performance score based on accuracy, deviation from optimal angles, and consistency.</li>
+  <li><strong>Personalized AI Feedback:</strong> Integrates OpenAI API to deliver tailored coaching tips and improvement suggestions.</li>
+
 
 </ul>
 And more to come! 
@@ -106,12 +109,14 @@ And more to come!
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+
+
+<!--## Getting Started
 
 <p>Want to try WhaleBeing out? Go to <a href="https://www.whalebeing.co/">www.whalebeing.ca</a> and type in 9455911 for the ship IMO number, and 2025/01/09 - 2025/01/11 for the dates. </p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+-->
 
 
 
@@ -137,14 +142,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- CONTACT -->
-## Contact
 
-Gordon Zhang - g234zhan@uwaterloo.ca
-
-Project Link: [https://github.com/gordonzhang1/WhaleBeing](https://github.com/gordonzhang1/WhaleBeing)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -237,3 +235,12 @@ Project Link: [https://github.com/gordonzhang1/WhaleBeing](https://github.com/go
 
 [TypeScript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 [TypeScript-url]: https://www.typescriptlang.org/
+
+[Docker]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+
+[Kubernetes]: https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white
+[Kubernetes-url]: https://kubernetes.io/
+
+[OpenAI]: https://img.shields.io/badge/OpenAI_API-412991?style=for-the-badge&logo=openai&logoColor=white
+[OpenAI-url]: https://platform.openai.com/
