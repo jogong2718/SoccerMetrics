@@ -63,8 +63,6 @@ The platform uses MediaPipe GHUM 3D to extract precise 3D pose landmarks, allowi
 
 Critical gameplay moments, such as ball contact, are identified using Pandas, and visualizations of angles and trajectories are annotated in real-time with OpenCV. Personalized feedback, based on the performance score, is generated using LangChain and the OpenAI API, ensuring that players receive detailed recommendations tailored to their unique needs.
 
-The scoring and feedback system operates seamlessly within a robust infrastructure powered by Docker for containerization, Kubernetes for scalability, and Google Cloud Platform for hosting. This architecture ensures the platform is both reliable and adaptable to various training scenarios. </p>
-
 
 
 ### Built With
@@ -78,17 +76,6 @@ The scoring and feedback system operates seamlessly within a robust infrastructu
 * [![MediaPipe][MediaPipe]][MediaPipe-url]
 * [![OpenAI API][OpenAI]][OpenAI-url]
 * [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
-
-
-
-
-
-
-### Deployed With
-* [![Google Cloud][GoogleCloud]][GoogleCloud-url]
-* [![Docker][Docker]][Docker-url]
-* [![Kubernetes][Kubernetes]][Kubernetes-url]
-* [![Vercel][Vercel]][Vercel-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
